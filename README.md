@@ -1,0 +1,14 @@
+EC2 Teardown Instructions
+
+
+Click on instance templates
+Select instance to delete
+Click actions
+Select delete instance templates
+
+
+Click on instances (left side pane)
+Select the desired instances
+Click actions
+Click delete instances
+
