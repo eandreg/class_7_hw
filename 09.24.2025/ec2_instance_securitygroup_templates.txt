@@ -1,0 +1,97 @@
+9/9/25
+
+Class 7: EC2 basics
+
+Task==building an Amazon Linux EC2 with a custom script
+
+Template==https://github.com/XDE77/bmc5/blob/main/ec2scrpit
+
+Steps
+1.	Create a new security group (do not use default, allows resources to have access to areas inside/outside of AWS)
+2.	Create EC2
+3.	Copy public DNS make it into a usable link and post link into the chat
+
+Notes:
+= Keypair connects a user’s computer to the AWS EC2 via secure shell
+=make sure to type http:// before any links are made
+	Example – http://ec2.3-17-6-2.us-east-2.compute.amazonnews.com
+=tags are useful for organization as well as tracking resource usage across the organization, essential for the office.
+
+What I learned today (for resume): Made a frond end server.
+
+9/22/25
+
+1.CREATE SECURITY GROUP
+	Security group name
+Description (optional)
+	VPC
+		Dropdown arrow
+			Default VPC name is auto populated
+	
+	Add rule
+	Inbound rules
+	Type > HTTP	Source > IPv4
+
+	Add rule
+	Type > SSH	Source > IPv4
+
+	Tags – optional
+													Create security group
+2.CREATE INSTANCE
+	Instances
+						Launch instances
+	Name
+	Xxxxxxxxxxxx
+	Key pair (login)
+	Create key pair
+		Key pair name
+			RSA	.pem
+							Create key pair
+
+Network settings
+Select existing security group
+
+Advanced details
+Scroll all the way down to the bottom
+User data – optional
+Paste the script
+https://github.com/XDE77/bmc5/blob/main/ec2scrpit
+											Launch instance
+
+In the Green bar, click on the newly create instance
+	Copy the Public DNS
+	Open a browser tab
+	Type http:// then paste the url
+	
+	Connect
+		Connect
+Ping -4 8.8.8.8
+						
+3.CREATE A TEMPLATE
+(for the creation of new instances)
+(a recipe for AWS to follow)
+	In Instance page click on 
+Actions > Image and templates > Create template from instance
+
+	Launch template name and description
+		Launch template name – required
+			Xxxxxxxxxxxxx
+		Template version description
+			Xxxxxxxxxxxxxxx
+
+Look at Summary – to make sure your configuration is satisfactory
+												Create launch template
+(this creates version 1)
+In the Green bar, click on the newly create instance
+Launch Templates
+Select a template to launch an instance from
+		Actions > Launch instance from template > Preview code
+												Launch instance
+	Copy the Public DNS
+	Open a browser tab
+	Type http:// then paste the url
+	
+	Connect
+		Connect
+Ping -4 8.8.8.8
+
